@@ -27,6 +27,8 @@ const Typography = ({ variant = "p", children, effect, className=" " }) => {
         h6: "text-12 md:text-[14px] lg:text-[16px] font-bold",
         p: "text-12 md:text-[14px] lg:text-[16px]",
         small: "text-10 md:text-[12px] lg:text-[14px]",
+        li: "flex items-center gap-3 text-sm text-gray-700",
+        span: "w-3 h-3 rounded-full bg-gray-900 shrink-0 inline-block",
 
     }
 

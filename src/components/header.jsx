@@ -5,44 +5,52 @@ import { RxAvatar } from "react-icons/rx";
 import { menus } from "../assets/constants/navbar";
 import { Link, useLocation } from "react-router-dom";
 import { FaTruck, FaRegHeart } from "react-icons/fa";
+import Typography from "./common/Typography";
 
 const Header = () => {
   const location = useLocation();
   return (
     <div>
-        {/* Top container */}
-      <div className="h-8 border-b-2 px-20 flex justify-between ">
+      {/* Top container */}
+      <div className="h-8 border-b-2 px-20 flex justify-between">
         {/* left side */}
         <div className="flex gap-2">
-        <div className="text-[18px] hover:text-blue-600">Eng</div>
-        <div className="text-[18px] hover:text-blue-600">USD</div>
+          <Typography variant="small" className="hover:text-blue-600 cursor-pointer">Eng</Typography>
+          <Typography variant="small" className="hover:text-blue-600 cursor-pointer">USD</Typography>
         </div>
         {/* right side */}
         <div className="flex gap-4">
-          
-          <div className="flex items-center gap-2 hover:text-blue-600">
+          <div className="flex items-center gap-2 hover:text-blue-600 cursor-pointer">
             <FaTruck />
-            <span>Track Order</span>
+            <Typography variant="small">Track Order</Typography>
           </div>
-          
-          <div className="flex items-center gap-2 hover:text-blue-600">
+          <div className="flex items-center gap-2 hover:text-blue-600 cursor-pointer">
             <FaRegHeart />
-            <span>Wish List</span>
+            <Typography variant="small">Wish List</Typography>
           </div>
         </div>
       </div>
-      {/* middle container */}
+
+      {/* Middle container */}
       <div className="px-20 py-8 flex items-center justify-between">
-        <div className="text-[#2196F3] text-[25px] font-bold ">LOGO HERE</div>
+        <Typography variant="h3" className="text-[#2196F3] font-bold">
+          LOGO HERE
+        </Typography>
+
         <div>
-          <div className="border p-2 flex items-center gap-2">
+          <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+            <div className="flex items-center gap-1 px-3 py-2 cursor-pointer whitespace-nowrap">
+              <Typography variant="small" className="text-gray-600">All Categories</Typography>
+              <span className="text-xs text-gray-600">▾</span>
+            </div>
+
             <input
-              placeholder="Search"
+              placeholder="Search..."
               type="text"
-              className="w-96 border border-gray-500 px-3 py-2 rounded-md"
+              className="w-96 px-3 py-2 outline-none text-sm"
             />
-            <button className="bg-[#2196F3] p-3 rounded-md text-white">
-              <IoSearch />
+            <button className="bg-[#2196F3] px-4 py-2 text-white flex items-center justify-center">
+              <IoSearch size={18} />
             </button>
           </div>
         </div>
@@ -52,19 +60,20 @@ const Header = () => {
           <RxAvatar size={28} />
         </div>
       </div>
-        {/* navbar container */}
-      <div className="bg-[#2196F3] p-6 text-center  flex items-center justify-center gap-20">
-        {menus?.map((menu) => {
-          return (
-            <Link
-              to={menu.pathName}
-              key={menu.id}
-              className={`text-white hover:underline ${location?.pathname === menu.pathName ? "underline text-white" : ""}`}
-            >
+
+      {/* Navbar container */}
+      <div className="bg-[#2196F3] p-6 text-center flex items-center justify-center gap-20">
+        {menus?.map((menu) => (
+          <Link
+            to={menu.pathName}
+            key={menu.id}
+            className={`text-white hover:underline ${location?.pathname === menu.pathName ? "underline text-white" : ""}`}
+          >
+            <Typography variant="small" className="text-white">
               {menu?.pathValue}
-            </Link>
-          );
-        })}
+            </Typography>
+          </Link>
+        ))}
       </div>
     </div>
   );

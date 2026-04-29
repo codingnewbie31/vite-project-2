@@ -15,8 +15,8 @@ export const menus = [
 ,
     {
         id : 3,
-        pathName : "/mouse",
-        pathValue : "Mouse"
+        pathName : "/product",
+        pathValue : "Product"
 
     }
 ,

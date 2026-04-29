@@ -13,7 +13,6 @@ const Slider = () => {
   return (
     <div>
       <Swiper
-        // install Swiper modules
         className="h-[500px] md:h-[500px]"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -27,34 +26,36 @@ const Slider = () => {
         <SwiperSlide>
           <div className="flex items-center justify-between h-full px-20">
 
-      {/* LEFT SIDE */}
-      <div className="max-w-md">
-        <p className="text-sm mb-2">Hot Sale</p>
+            {/* LEFT SIDE */}
+            <div className="max-w-md">
+              <Typography variant="p" className="mb-2">
+                Hot Sale
+              </Typography>
 
-        <Typography variant="h1" className="leading-tight mb-6">
-          Gaming Pc <br /> Complete Setup
-        </Typography>
+              <Typography variant="h1" className="leading-tight font-bold mb-6">
+                Gaming Pc <br /> Complete Setup
+              </Typography>
 
-        <button className="bg-[#2196F3] text-white px-14 py-3 rounded-md">
-          Explore
-        </button>
-      </div>
+              <button className="bg-[#2196F3] text-white px-14 py-3 rounded-md">
+                <Typography variant="p">
+                  Explore
+                </Typography>
+              </button>
+            </div>
 
-      {/* RIGHT SIDE */}
-      <div>
-        <img
-          src={PC}
-          alt="PC"
-          className="w-[500px] md:w-[500px] lg:w-[550px] object-contain"
-        />
-      </div>
+            {/* RIGHT SIDE */}
+            <div>
+              <img
+                src={PC}
+                alt="PC"
+                className="w-[544px] h-[338px] object-contain"
+              />
+            </div>
 
-    </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div>
-                
-            </div>
+          <div></div>
         </SwiperSlide>
       </Swiper>
     </div>
