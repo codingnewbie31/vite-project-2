@@ -47,5 +47,19 @@ export const menus = [
         pathValue : "ContactUs"
 
     }
+,   
+    {
+        id : 8,
+        pathName : "/dashBoard",
+        pathValue : "DashBoard"
+
+    }  
+,
+    {
+        id : 9,
+        pathName : "/signUpForm",
+        pathValue : "SignUpForm"
+
+    }       
 ]
 

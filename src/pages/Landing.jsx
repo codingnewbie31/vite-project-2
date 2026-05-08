@@ -22,6 +22,12 @@ const Landing = () => {
           >
             Sign Up
           </Link>
+          {/* <Link
+            to="/signupform"
+            className="bg-[#2196F3] text-white px-5 py-2 rounded text-sm font-medium hover:bg-blue-600 transition"
+          >
+            Sign Up Form
+          </Link> */}
         </div>
       </div>
 

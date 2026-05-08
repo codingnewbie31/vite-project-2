@@ -25,13 +25,22 @@ const SignUp = () => {
           <p className="text-sm text-gray-500 mb-8">
             Upgrade your tech game with us!
           </p>
-          {/* Name */}
+          {/* First Name */}
           <div className="mb-4">
-            <label className="text-sm text-gray-700 mb-1 block">Name</label>
+            <label className="text-sm text-gray-700 mb-1 block">First Name</label>
             <input
               type="text"
-              placeholder="Name"
-              className="w-full px-4 py-3 rounded bg-[#F5F5F5] border border-gray-200 outline-none text-sm"
+              placeholder="First Name"
+              className="w-full px-4 py-3 rounded bg-[#f8f8f8] border border-gray-200 outline-none text-sm"
+            />
+          </div>
+          {/* Last Name */}
+          <div className="mb-4">
+            <label className="text-sm text-gray-700 mb-1 block">Last Name</label>
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="w-full px-4 py-3 rounded bg-[#f8f8f8] border border-gray-200 outline-none text-sm"
             />
           </div>
           {/* Email */}
@@ -40,7 +49,7 @@ const SignUp = () => {
             <input
               type="email"
               placeholder="myemail@email.com"
-              className="w-full px-4 py-3 rounded bg-[#F5F5F5] border border-gray-200 outline-none text-sm"
+              className="w-full px-4 py-3 rounded bg-[#f8f8f8] border border-gray-200 outline-none text-sm"
             />
           </div>
           {/* Password */}
@@ -50,7 +59,7 @@ const SignUp = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••••"
-                className="w-full px-4 py-3 rounded bg-[#F5F5F5] border border-gray-200 outline-none text-sm"
+                className="w-full px-4 py-3 rounded bg-[#f8f8f8] border border-gray-200 outline-none text-sm"
               />
               <button
                 type="button"
@@ -61,7 +70,7 @@ const SignUp = () => {
               </button>
             </div>
           </div>
-          {/* Confirm Password */}
+          {/* Confirm Password
           <div className="mb-6">
             <label className="text-sm text-gray-700 mb-1 block">
               Confirm Password
@@ -70,7 +79,7 @@ const SignUp = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="••••••••••"
-                className="w-full px-4 py-3 rounded bg-[#F5F5F5] border border-gray-200 outline-none text-sm"
+                className="w-full px-4 py-3 rounded bg-[#f8f8f8] border border-gray-200 outline-none text-sm"
               />
               <button
                 type="button"
@@ -80,9 +89,10 @@ const SignUp = () => {
                 {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
               </button>
             </div>
-          </div>
+          </div> */}
+          
           {/* Sign Up Button */}
-          <button className="w-full bg-[#2196F3] text-white py-3 rounded text-sm font-semibold hover:bg-blue-600 transition mb-4">
+          <button type= "submit" className="w-full bg-[#2196F3] text-white py-3 rounded text-sm font-semibold hover:bg-blue-600 transition mb-4">
             Sign Up
           </button>
           {/* Sign In Link */}
