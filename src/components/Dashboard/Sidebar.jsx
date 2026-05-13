@@ -10,11 +10,11 @@ const Sidebar = ({ sidebarOpen, activeNav, setActiveNav, navItems }) => (
     {/* Logo */}
     <div className="flex items-center gap-3 px-4 py-5 border-b border-slate-200">
       <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center shrink-0">
-        <span className="text-white text-sm font-bold">N</span>
+        <span className="text-white text-sm font-bold">L</span>
       </div>
       {sidebarOpen && (
         <span className="font-semibold text-base tracking-tight text-zinc-900">
-          Nexus
+          Logo
         </span>
       )}
     </div>

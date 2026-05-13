@@ -1,17 +1,30 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/v1/user";
-const CATEGORY_URL = "http://localhost:3000/v1/category";
-const AUTH_URL = "http://localhost:3000/v1";
+// ✅ Single axios instance with base URL
+const api = axios.create({
+  baseURL: "http://localhost:3000/v1",
+});
 
-export const createUser = (values) => axios.post(BASE_URL, values);
-export const getAllUsers = () => axios.get(BASE_URL);
-export const updateUser = (id, values) => axios.put(`${BASE_URL}/${id}`, values);
-export const deleteUser = (id) => axios.delete(`${BASE_URL}/${id}`);
+// ✅ Interceptor — automatically attaches token to every request
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token"); // adjust key if different
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
-export const createCategory = (values) => axios.post(CATEGORY_URL, values);
-export const getAllCategories = () => axios.get(CATEGORY_URL);
-export const updateCategory = (id, values) => axios.put(`${CATEGORY_URL}/${id}`, values);
-export const deleteCategory = (id) => axios.delete(`${CATEGORY_URL}/${id}`);
+// Users
+export const createUser = (values) => api.post("/user", values);
+export const getAllUsers = () => api.get("/user");
+export const updateUser = (id, values) => api.put(`/user/${id}`, values);
+export const deleteUser = (id) => api.delete(`/user/${id}`);
 
-export const loginUser = (values) => axios.post(`${AUTH_URL}/login`, values);
+// Categories
+export const createCategory = (values) => api.post("/category", values);
+export const getAllCategories = () => api.get("/category");
+export const updateCategory = (id, values) => api.put(`/category/${id}`, values);
+export const deleteCategory = (id) => api.delete(`/category/${id}`);
+
+// Auth (no token needed for login)
+export const loginUser = (values) => api.post("/login", values);
