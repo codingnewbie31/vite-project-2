@@ -18,7 +18,8 @@ const ProductEditor = () => {
     oldPrice: "",
     description: "",
     image: null, // Will store the file object
-    stock: true,
+    inStock: false,
+    freeShipping : false,
   };
 
   const handleSubmit = (values) => {
@@ -225,14 +226,25 @@ const ProductEditor = () => {
                   />
                 </div>
 
-                {/* Stock toggle */}
+                <div className="flex items-center gap-6 mb-6"> 
+                {/* In Stock  */}
                 <div className="flex items-center gap-2 mb-6">
                   <Field
-                    name="stock"
+                    name="inStock"
                     type="checkbox"
                     className="w-4 h-4 text-[#2196F3] rounded"
                   />
                   <label className="text-sm text-gray-700">In stock</label>
+                </div>
+                    {/* Free Shipping */}
+                <div className="flex items-center gap-2 mb-6">
+                  <Field
+                    name="freeShipping"
+                    type="checkbox"
+                    className="w-4 h-4 text-[#2196F3] rounded"
+                  />
+                  <label className="text-sm text-gray-700">Free Shipping</label>
+                </div>
                 </div>
 
                 {/* Submit Button */}
